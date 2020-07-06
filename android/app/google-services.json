@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "494966864928",
+    "firebase_url": "https://hello-f8eed.firebaseio.com",
+    "project_id": "hello-f8eed",
+    "storage_bucket": "hello-f8eed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:494966864928:android:ef4b1085bf9b98415cd045",
+        "android_client_info": {
+          "package_name": "com.MrHYDRA.hello"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "494966864928-v6us5rninq3b7kdvf51b6e6jm5150chd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.MrHYDRA.hello",
+            "certificate_hash": "6091734929844cfe409a5cc80a83ad9497156061"
+          }
+        },
+        {
+          "client_id": "494966864928-1lmm86t2147ksaegeo2qmc7tqslb6r4i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUJ0p-h8D_FsLlefxQYE20aHuwgT4zRfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "494966864928-1lmm86t2147ksaegeo2qmc7tqslb6r4i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
