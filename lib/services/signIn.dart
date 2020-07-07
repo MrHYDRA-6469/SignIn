@@ -2,6 +2,7 @@ import 'package:SignIn/Shared/orDivider.dart';
 import 'package:SignIn/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:SignIn/shared/loading.dart';
+import 'package:SignIn/ui/forgotPassword.dart';
 
 class SignIn extends StatefulWidget {
   final Function toggleview;
@@ -15,10 +16,12 @@ class _SignInState extends State<SignIn> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
   bool loading = false;
+  bool _forgot = false;
 
   String _email = '';
   String _password = '';
   String error = '';
+  String sent = '';
 
   @override
   Widget build(BuildContext context) {
@@ -112,12 +115,30 @@ class _SignInState extends State<SignIn> {
                             _email, _password);
                         if (result == null) {
                           setState(() {
+                            _forgot = true;
                             error = 'Unable to Sign In';
                             loading = false;
                           });
                         }
                       }
                     },
+                  ),
+                  Visibility(
+                    visible: _forgot,
+                    child: ActionChip(
+                      label: Text('Forgot Password'),
+                      onPressed: () async {
+                        Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                            builder: (context) => ForgotPasswordScreen(),
+                          ),
+                        );
+                        setState(() {
+                          _forgot = false;
+                        });
+                      },
+                    ),
                   ),
                   SizedBox(
                     height: 12,
@@ -142,7 +163,8 @@ class _SignInState extends State<SignIn> {
                     },
                   ),
                   SizedBox(height: 20),
-                  Text(error)
+                  Text(error),
+                  Text(sent)
                 ]),
               ),
             ));
