@@ -79,7 +79,15 @@ class AuthService {
           email: email, password: pass);
       FirebaseUser user = result.user;
 
-      await DatabaseService(uid: user.uid).updateUserData(email, pass, 3);
+      try {
+        await user.sendEmailVerification();
+        return user.uid;
+      } catch (e) {
+        print("An error occured while trying to send email verification");
+        print(e.message);
+      }
+
+      // await DatabaseService(uid: user.uid).updateUserData(email, pass, 3);
       print(email);
       print(pass);
 
