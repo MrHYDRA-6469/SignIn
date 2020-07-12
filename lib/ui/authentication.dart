@@ -1,3 +1,4 @@
+import 'package:SignIn/ui/onboardScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:SignIn/services/register.dart';
 import 'package:SignIn/services/signIn.dart';
@@ -15,8 +16,6 @@ class _AuthenticateState extends State<Authenticate> {
 
   @override
   Widget build(BuildContext context) {
-    return showSignIn == true
-        ? SignIn(toggleview: toggleView)
-        : Register(toggleview: toggleView);
+    return showSignIn == true ? OnboardScreen() : Register();
   }
 }

@@ -1,10 +1,9 @@
 import 'package:SignIn/services/auth.dart';
+import 'package:SignIn/services/signIn.dart';
 import 'package:flutter/material.dart';
 import 'package:SignIn/shared/loading.dart';
 
 class Register extends StatefulWidget {
-  final Function toggleview;
-  Register({this.toggleview});
   @override
   _RegisterState createState() => _RegisterState();
 }
@@ -36,7 +35,10 @@ class _RegisterState extends State<Register> {
                     icon: Icon(Icons.person),
                     label: Text('Sign In'),
                     onPressed: () async {
-                      widget.toggleview();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignIn()),
+                      );
                     },
                   ),
                 ]),

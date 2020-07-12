@@ -1,13 +1,11 @@
 import 'package:SignIn/Shared/orDivider.dart';
 import 'package:SignIn/services/auth.dart';
+import 'package:SignIn/services/register.dart';
 import 'package:flutter/material.dart';
 import 'package:SignIn/shared/loading.dart';
 import 'package:SignIn/ui/forgotPassword.dart';
 
 class SignIn extends StatefulWidget {
-  final Function toggleview;
-  SignIn({this.toggleview});
-
   @override
   _SignInState createState() => _SignInState();
 }
@@ -42,7 +40,10 @@ class _SignInState extends State<SignIn> {
                     icon: Icon(Icons.person),
                     label: Text('Register'),
                     onPressed: () async {
-                      widget.toggleview();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Register()),
+                      );
                     },
                   ),
                 ]),
